@@ -46,7 +46,7 @@
     <!--   Header end  Here -->
     <div class="container">
         <h2>Admission Enquiry Form</h2>
-        <form id="enquiryForm" action="" method="post">
+        <form id="enquiryForm">
             <div class="form-row">
                 <div class="form-group">
                     <select id="enquiryFor" required>
@@ -133,16 +133,22 @@
             </div>
 
             <div class="form-row submit-row">
-                <button type="submit">Submit</button>
+                <button type="submit" onclick="submitForm()">Submit</button>
             </div>
         </form>
     </div>
     <div class="footer">
         <p>&copy; 2024 Harshal Tapre</p>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-    <script src="script.js"></script>
-
+    </div>
+    <script>
+        function submitForm() {
+            var form = document.getElementById('enquiryForm');
+            if (form.checkValidity()) {
+                alert('Form submitted successfully!');
+            }
+        }
+    </script>
 </body>
 
 </html>
