@@ -34,12 +34,10 @@ body {
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
     transform: scale(1);
-    /* initial scale */
 }
 
 .logo:hover {
     transform: scale(1.2);
-    /* scaled up on hover */
 }
 
 .header-info {
@@ -82,15 +80,22 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap on smaller screens */
+    width: 100%;
+    /* Ensure it fits the full width */
 }
 
 .navbar ul li {
     margin-right: 20px;
+    flex: 1 1 auto;
+    /* Adjust based on available space */
+    text-align: center;
+    /* Center the text */
 }
 
 .navbar ul li a {
     color: #1C2833;
-    /* Dark Blue */
     text-decoration: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
@@ -99,7 +104,6 @@ body {
 
 .navbar ul li a:hover {
     color: #007BFF;
-    /* Soft Blue */
     text-decoration: underline;
 }
 
@@ -115,7 +119,6 @@ body {
     width: 0%;
     height: 1px;
     background: #87CEEB;
-    /* Sky Blue */
     transition: width .5s;
 }
 
@@ -128,12 +131,10 @@ body {
 
 .navbar.fill ul li a:hover {
     color: #FFFFFF;
-    /* White */
 }
 
 .navbar.fill ul li a:hover:after {
     background: #ADD8E6;
-    /* Light Blue */
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -252,6 +253,9 @@ button:hover {
     background-color: #003770;
 }
 
+
+/* Mobile adjustments */
+
 @media (max-width: 768px) {
     .form-row {
         flex-direction: column;
@@ -268,6 +272,15 @@ button:hover {
     .contact-info {
         text-align: center;
     }
+    .navbar ul {
+        flex-direction: column;
+    }
+    .navbar ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -275,7 +288,10 @@ button:hover {
         flex-direction: column;
     }
     .navbar ul li {
-        margin-right: 10px;
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
     }
     .logo {
         margin-bottom: 10px;
